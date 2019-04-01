@@ -15,9 +15,9 @@ class PigLatinizer
     letter = text.split(/([aeiou].*)/) # will part anything before the first vowel
     vowels = %w(a e i o u)
     if vowels.include?(letter[0].downcase)
-      @pl = letter[1] + letter[0] + 'ay'
-    else
       @pl = letter[1] + letter[0] + 'way'
+    else
+      @pl = letter[1] + letter[0] + 'ay'
     end
    @pl
   end
