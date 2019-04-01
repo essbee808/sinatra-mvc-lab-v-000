@@ -18,7 +18,7 @@ class PigLatinizer
     if vowels.include?(letter[0].downcase)
       @pl = letter[1] + letter[0] + 'ay'
     else
-      @pl = letter[1] + letter[0] + 'ay'
+      @pl = letter[1] + letter[0] + 'way'
     end
    @pl
   end
