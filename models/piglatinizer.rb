@@ -46,7 +46,7 @@ class PigLatinizer
   def piglatinize(text) #either word or phrase
     array = split_phrase(text)
     words_array = []
-    binding.pry
+    #binding.pry
     if array.size == 1
         piglatin = validate_letters(text)
     elsif array.size > 1
