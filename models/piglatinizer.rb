@@ -12,7 +12,6 @@ class PigLatinizer
   end
   
   def validate_letters(text)
-    letter = text.split(/([aeiouAEIOU].*)/) # will part anything before the first vowel
     vowels = %w(a e i o u) #ends with a cons == 'ay'
     consonants = %w(b c d f g h j k l m n p q r s t v w x y z)
     if vowels.include?(text[0].downcase)
