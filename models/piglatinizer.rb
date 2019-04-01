@@ -48,13 +48,12 @@ class PigLatinizer
     words_array = []
     #binding.pry
     if array.size == 1
-        return validate_letters(text)
+      return validate_letters(text)
     else 
       array.each do |text|
         words_array << validate_letters(text)
       end
       return words_array.join(" ")
     end
-    piglatin
   end
 end
