@@ -14,9 +14,9 @@ class PigLatinizer
   def validate_letters(text)
     letter = text.split(/([aeiou].*)/) # will part anything before the first vowel
     vowels = %w(a e i o u)
-    
+     binding.pry
     if vowels.include?(letter[0].downcase)
-      binding.pry
+     
       @pl = text + 'way'
     else
       @pl = letter[1] + letter[0] + 'ay'
