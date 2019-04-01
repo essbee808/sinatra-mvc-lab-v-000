@@ -16,7 +16,7 @@ class PigLatinizer
     vowels = %w(a e i o u) #ends with a cons == 'ay'
     consonants = %w(b c d f g h j k l m n p q r s t v w x y z)
     binding.pry
-    if vowels.include?(letter[0].downcase)
+    if vowels.include?(text[0].downcase)
       @pl = text + 'way' #start with a vowel
     else
       @pl = letter[1] + letter[0] + 'ay'
