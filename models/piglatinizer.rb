@@ -12,29 +12,36 @@ class PigLatinizer
   end
   
   def validate_letters(text)
-    #letter = text.split(/([aeiouAEIOU].*)/) => will part anything before the first vowel
-      text[0].downcase
-    if text.match(/\A[aeiouAEIOU][a-zA-Z]*/) #begins with vowel
+    letter = text.split(/([aeiou].*)/) # will part anything before the first vowel
+    vowels = %w(a e i o u)
+    
+    if vowels.include?(letter[0].downcase)
       @pl = text + 'way'
-    elsif text.match(/\A[^aeiouAEIOU][aeiouAEIOU][a-zA-Z]*/) #cons + vowel
-      arr = text.chars
-      el = arr.shift
-      @pl = arr.push(el).join("") + 'ay'
-    elsif text.match(/\A[^aeiouAEIOU]{2}[a-zA-Z]*/) # Ex: program
-      arr = text.chars
-      a = arr.slice(0,2).join("")
-      b = arr.slice(2..-1).join("")
-      @pl =  b + a + 'ay'
-    elsif text.match(/\A[^aeiouAEIOU]{3}[a-zA-Z]*/) # Ex: spring
-      arr = text.chars
-      a = arr.slice(0,3).join("")
-      b = arr.slice(3..-1).join("")
-      @pl =  b + a + 'ay'
     else
-      puts nil
+      @pl = letter[1] + letter[0] + 'ay'
     end
-      @pl
+   @pl
   end
+    # if text.match(/\A[aeiouAEIOU][a-zA-Z]*/) #begins with vowel
+    #   @pl = text + 'way'
+    # elsif text.match(/\A[^aeiouAEIOU][aeiouAEIOU][a-zA-Z]*/) #cons + vowel
+    #   arr = text.chars
+    #   el = arr.shift
+    #   @pl = arr.push(el).join("") + 'ay'
+    # elsif text.match(/\A[^aeiouAEIOU]{2}[a-zA-Z]*/) # Ex: program
+    #   arr = text.chars
+    #   a = arr.slice(0,2).join("")
+    #   b = arr.slice(2..-1).join("")
+    #   @pl =  b + a + 'ay'
+    # elsif text.match(/\A[^aeiouAEIOU]{3}[a-zA-Z]*/) # Ex: spring
+    #   arr = text.chars
+    #   a = arr.slice(0,3).join("")
+    #   b = arr.slice(3..-1).join("")
+    #   @pl =  b + a + 'ay'
+    # else
+    #   puts nil
+    # end
+      
 
   def piglatinize(text) #either word or phrase
     array = split_phrase(text)
