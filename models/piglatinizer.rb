@@ -16,7 +16,6 @@ class PigLatinizer
     vowels = %w(a e i o u)
      binding.pry
     if vowels.include?(letter[0].downcase)
-     
       @pl = text + 'way'
     else
       @pl = letter[1] + letter[0] + 'ay'
